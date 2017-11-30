@@ -7,6 +7,8 @@ RUN apt-get update && apt install git wget unzip ssh latexmk make inkscape scrib
 RUN mkdir -p /root/.ssh && ssh-keyscan git.kitcar-team.de >> /root/.ssh/known_hosts
 ADD scribus_export_pdf.py /opt/scribus_export_pdf.py
 
+RUN apt update && apt install -y texlive-fonts-extra texlive-science
+
 
 
 
