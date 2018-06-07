@@ -21,13 +21,13 @@ stage-docker:
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN git.kitcar-team.de:4567
     - docker build -t git.kitcar-team.de:4567/kitcar/docker-latex-build:$CI_COMMIT_REF_NAME .
-    - docker push git.kitcar-team.de:4567/kitcar/docker-latex-build$CI_COMMIT_REF_NAME
+    - docker push git.kitcar-team.de:4567/kitcar/docker-latex-build:$CI_COMMIT_REF_NAME
   except:
     - master
   environment: gitlab
   when: manual
 
-deploy-docker:
+deploy-latest-docker:
   image: docker:git
   services:
     - docker:dind
