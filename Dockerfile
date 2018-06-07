@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Marek Wehmer marek@wehmermail.net 
+LABEL name=docker-latex-build version=latest
 
 RUN apt-get update && apt install -y texlive texlive-lang-german texlive-lang-greek texlive-latex-extra texlive-bibtex-extra biber
 RUN apt-get update && apt-get install software-properties-common -y && apt-add-repository ppa:scribus/ppa
