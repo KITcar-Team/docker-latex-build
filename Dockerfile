@@ -1,15 +1,15 @@
-FROM ubuntu:16.04
-MAINTAINER Marek Wehmer marek@wehmermail.net 
+FROM ubuntu:18.04
+LABEL name=docker-latex-build version=latest
 
-RUN apt-get update && apt install -y texlive texlive-lang-german texlive-lang-greek texlive-latex-extra texlive-bibtex-extra biber
-RUN apt-get update && apt-get install software-properties-common -y && apt-add-repository ppa:scribus/ppa
-RUN apt-get update && apt install git wget unzip ssh latexmk make inkscape scribus-ng xvfb -y
-RUN mkdir -p /root/.ssh && ssh-keyscan git.kitcar-team.de >> /root/.ssh/known_hosts
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
+    git wget unzip latexmk make inkscape xvfb \
+    texlive texlive-lang-german texlive-lang-greek texlive-latex-extra \
+    texlive-bibtex-extra biber software-properties-common \
+    texlive-fonts-extra texlive-science texlive-publishers \
+    texlive-font-utils
+
+RUN apt-add-repository ppa:scribus/ppa
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install scribus-ng -y
+
 ADD scribus_export_pdf.py /opt/scribus_export_pdf.py
-
-RUN apt update && apt install -y texlive-fonts-extra texlive-science texlive-publishers
-
-
-
-
 
