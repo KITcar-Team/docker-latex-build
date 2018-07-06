@@ -6,5 +6,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
     texlive texlive-lang-german texlive-lang-greek texlive-latex-extra \
     texlive-bibtex-extra biber software-properties-common \
     texlive-fonts-extra texlive-science texlive-publishers \
-    texlive-font-utils
+    texlive-font-utils \
+    python-pygments
 
