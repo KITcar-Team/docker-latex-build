@@ -9,3 +9,5 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
     texlive-font-utils \
     python-pygments
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
+    libreoffice
