@@ -7,7 +7,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
     texlive-bibtex-extra biber software-properties-common \
     texlive-fonts-extra texlive-science texlive-publishers \
     texlive-font-utils \
-    python-pygments
+    python-pygments \
+    python3-jinja2
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y \
     libreoffice
