@@ -21,7 +21,7 @@ docker build -t git.kitcar-team.de:4567/kitcar/docker-latex-build .
 
 ## Use the Docker Image to Build Some LaTeX Code
 ```
-docker run -it --rm -v $PATH_TO_LATEX_CODE:/latex kitcar/docker-latex-build
+docker run -it --rm -v $PATH_TO_LATEX_CODE:/latex git.kitcar-team.de:4567/kitcar/docker-latex-build
 ```
 Inside the container, move inside the folder containing your document and build with `latexmk`:
 ```
@@ -30,7 +30,7 @@ latexmk -pdf document.tex
 ```
 Pro tip:
 ```
-docker run -it --rm -v PATH_TO_LATEX_CODE:/latex kitcar/docker-latex-build latexmk -pdf -cd -outdir=/latex /latex/document.tex
+docker run -it --rm -v PATH_TO_LATEX_CODE:/latex git.kitcar-team.de:4567/kitcar/docker-latex-build latexmk -pdf -cd -outdir=/latex /latex/document.tex
 ```
 
 ## Update Docker Image
