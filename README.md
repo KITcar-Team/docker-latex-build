@@ -4,6 +4,29 @@ Docker image to build presentations, guides, slides etc.. from LaTeX.
 
 The source is available at KITcar's GitLab and a mirrored version at [GitHub](https://github.com/KITcar-Team/docker-latex-build), the build docker image is available at [GitLab](https://git.kitcar-team.de/kitcar/docker-latex-build/container_registry).
 
+## Install Docker (Ubuntu)
+
+Please follow the instructions given in the [Docker documentation](https://docs.docker.com/engine/install/ubuntu/) for installing the Docker Engine on Ubuntu. The important sections are: **[Set up the repository](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)** and
+**[Install Docker Engine](https://docs.docker.com/engine/install/ubuntu/#install-docker-engine)**.
+
+In short, run this:
+
+    sudo apt-get update
+
+    sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+    sudo apt-get update
+
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+    sudo docker run hello-world
+
+To allow non-privileged users to run Docker commands (no sudo) take a look at [Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
+
 ## Get Docker Image
 
 Download the docker image with:
